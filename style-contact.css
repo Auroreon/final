@@ -1,0 +1,151 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+  }
+
+body {background-color: rgb(29, 32, 37);}
+
+
+.container{
+    display: grid;
+    border-style: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        'main-content main-content sidebar'
+        'header header header '
+        'navbar navbar navbar'
+        'navbar navbar navbar'
+        'box-1 box-1 box-1'
+        'box-1 box-1 box-1'
+        'form form form'
+        'form form form'
+        'footer footer footer';
+    grid-gap: 1rem;
+}
+
+@media (max-width:500px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'sidebar'
+        'main-content'
+        'header'
+        'navbar'
+        'box-1'
+        'form form form'
+        'footer'
+    }
+}
+
+header{
+    grid-area: header;
+    border: none;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar{
+    grid-area: navbar;
+    background-color:rgb(29, 32, 37);
+    text-align:center;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.navbar a {
+    float: left;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.navbar a:hover {
+    background-color: rgb(0, 217, 255);
+}
+  
+.active {
+    background-color: rgb(201, 57, 57);
+}
+
+.main-content{
+    font-size: 30px;
+    grid-area: main-content;
+    padding: 5px;
+    text-align: center;
+    object-fit: cover;
+}
+
+.sidebar{
+    font-size: 30px;
+    grid-area: sidebar;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+#box-1{
+    font-size: 35px;
+    color: seashell;
+    grid-area: box-1;
+    background-image:url(./media/me3.jpg);
+    background-position: 40% 40%;
+    background-color: rgb(201, 57, 57);
+    /* background-position: top; */
+    background-size: cover;
+
+}
+#form{    
+    font-size: 35px;
+    background-color: rgba(37, 37, 37, 0);
+    color: black;
+    grid-area: form;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=text], select, textarea {
+    background-color: rgba(37, 37, 37, 0);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color: #f31515;
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+}
+
+.header, #box-1, #box-2, #box-3, #box-4, #box-5, #box-6, footer {
+/* border: #ccc 1x solid; */
+border-style: groove;
+border-width: 1px;
+border-color: #ccc;
+}
